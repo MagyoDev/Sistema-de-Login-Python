@@ -1,0 +1,69 @@
+MDScreen:
+    name: "atualizar_info"
+
+    ScrollView:
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height  # Permite rolagem quando necessário
+
+            MDTextField:
+                id: nome_conta
+                hint_text: "Nome"
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+                size_hint_x: .8
+                icon_right: "account"
+                icon_right_color: app.theme_cls.primary_color
+
+            MDTextField:
+                id: email_conta
+                hint_text: "Email"
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint_x: .8
+                icon_right: "email"
+                icon_right_color: app.theme_cls.primary_color
+
+            MDTextField:
+                id: senha_conta
+                hint_text: "Senha"
+                pos_hint: {"center_x": 0.5, "center_y": 0.4}
+                size_hint_x: .8
+                password: True
+                icon_right: "key-variant"
+                icon_right_color: app.theme_cls.primary_color
+
+            MDTextField:
+                id: novo_email  # Novo campo de texto para o novo email
+                hint_text: "Novo Email"
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                size_hint_x: .8
+                icon_right: "email"
+                icon_right_color: app.theme_cls.primary_color
+
+            MDTextField:
+                id: nova_senha  # Novo campo de texto para a nova senha
+                hint_text: "Nova Senha"
+                pos_hint: {"center_x": 0.5, "center_y": 0.2}
+                size_hint_x: .8
+                password: True
+                icon_right: "key-variant"
+                icon_right_color: app.theme_cls.primary_color
+
+            Widget:
+                size_hint_y: 0.5  
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: None
+                height: self.minimum_height
+
+                Widget:
+                    size_hint_x: 0.5  # Espaço vazio à esquerda
+
+                MDRaisedButton:
+                    text: "Confirmar Atualização"
+                    on_release: 
+                        app.atualizar_conta(nome_conta.text, email_conta.text, senha_conta.text, novo_email.text, nova_senha.text)
+
+                Widget:
+                    size_hint_x: 0.5  

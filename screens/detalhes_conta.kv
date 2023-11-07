@@ -1,0 +1,27 @@
+MDScreen:
+    name: "detalhes_conta"
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            id: nome_conta
+            halign: "center"
+            font_style: "H6"
+
+        MDLabel:
+            id: email_conta
+            halign: "center"
+            font_style: "Subtitle2"
+
+        MDRaisedButton:
+            text: "Validar Conta"
+            on_release: app.validar_conta(email_conta.text)
+
+        MDRaisedButton:
+            text: "Atualizar Conta"
+            on_release: app.root.current = 'atualizar_info'
+
+        MDRaisedButton:
+            text: "Inativar Conta"
+            on_release: app.inativar_conta(email_conta.text)

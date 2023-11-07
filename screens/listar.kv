@@ -1,0 +1,23 @@
+#:import OneLineListItem kivymd.uix.list.OneLineListItem
+
+MDScreen:
+    name: "listar"
+
+    on_pre_enter:
+        app.carregar_contas()
+
+    ScrollView:
+        MDList:
+            id: account_list
+
+            OneLineListItem:
+                text: "Contas Ativas"
+
+            MDList:
+                id: account_list_ativas
+
+            OneLineListItem:
+                text: "Contas Inativas"
+
+            MDList:
+                id: account_list_inativas
